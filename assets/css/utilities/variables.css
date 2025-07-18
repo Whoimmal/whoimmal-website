@@ -1,0 +1,36 @@
+:root {
+  /* ========== Color Palette ========== */
+  --color-bg: #f9f4e8;          /* Background umum */
+  --color-text: #111111;        /* Teks utama */
+  --color-subtext: #444444;     /* Teks sekunder */
+  --color-muted: #999999;       /* Untuk teks redup/placeholder */
+
+  --color-accent: #f0c66f;      /* Kuning pastel: highlight utama */
+  --color-accent-light: #fdf1d6;
+  --color-hover: #e35c4d;       /* Merah coral: interaktif (hover/button) */
+  --color-green: #486d52;       /* Hijau tenang: alternatif */
+
+  --color-border: #dddddd;      /* Border kalender/kartu */
+  --color-white: #ffffff;
+  --color-card-bg: #fcfbf9;     /* Background kartu */
+  --color-shadow: rgba(0, 0, 0, 0.08); /* Shadow lembut */
+
+  /* ========== Typography ========== */
+  --font-heading: 'Archivo Black', sans-serif;
+  --font-body: 'Poppins', sans-serif;
+
+  /* ========== Border Radius ========== */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+
+  /* ========== Shadows ========== */
+  --shadow-xs: 0 2px 6px rgba(0, 0, 0, 0.04);
+  --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 12px 32px rgba(0, 0, 0, 0.08);
+
+  /* ========== Spacing ========== */
+  --gap-sm: 8px;
+  --gap-md: 16px;
+  --gap-lg: 32px;
+}

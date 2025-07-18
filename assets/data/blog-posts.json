@@ -1,0 +1,34 @@
+[
+  {
+    "id": 1,
+    "title": "Ketika Keheningan Berbicara Lebih Keras",
+    "subtitle": "Sebuah kisah tentang penyembuhan, ruang, dan gema batin.",
+    "image": "assets/images/hero-1.jpg",
+    "badge": "Featured",
+    "link": "post.html?id=1"
+  },
+  {
+    "id": 2,
+    "title": "Percakapan Tengah Malam",
+    "subtitle": "Terkadang malam mampu membuat diri berkata jujur tentang apa yang dialami...",
+    "image": "assets/images/post1.jpg",
+    "badge": "Reflection",
+    "link": "post.html?id=2"
+  },
+  {
+    "id": 3,
+    "title": "Ruang Kosong Dalam Diri",
+    "subtitle": "Bahkan diam pun memiliki cerita. Dan terkadang itu yang paling keras.",
+    "image": "assets/images/post2.jpg",
+    "badge": "Essai",
+    "link": "post.html?id=3"
+  },
+  {
+    "id": 4,
+    "title": "Surat Untuk Diriku Esok Hari",
+    "subtitle": "Kamu telah berhasil melewati hari hari yang tidak pernah kamu duga akan kamu lakukan.",
+    "image": "assets/images/post3.jpg",
+    "badge": "Memoir",
+    "link": "post.html?id=4"
+  }
+]

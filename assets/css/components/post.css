@@ -1,0 +1,55 @@
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: #fff9ef;
+  color: #111;
+}
+
+.post-container {
+  position: relative;
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 32px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+}
+
+.close-btn {
+  position: fixed;
+  top: 24px;
+  right: 24px;
+  background: #111;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  font-size: 20px;
+  cursor: pointer;
+  z-index: 9999;
+}
+
+#post-content img {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 24px;
+}
+
+#post-content h1 {
+  font-size: 32px;
+  margin-bottom: 12px;
+}
+
+#post-content p.subtitle {
+  font-size: 16px;
+  color: #666;
+  margin-bottom: 24px;
+}
+
+#post-content .post-body {
+  font-size: 16px;
+  line-height: 1.8;
+  color: #333;
+  margin-top: 24px;
+}

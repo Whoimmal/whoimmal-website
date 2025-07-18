@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Whoimmal — Contacts </title>
+
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="stylesheet" href="assets/css/components/contacts.css" />
+  <link rel="stylesheet" href="assets/css/utilities/variables.css" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="stylesheet" href="assets/css/components/navbar.css" />
+  <link rel="stylesheet" href="assets/css/components/hero.css" />
+  <link rel="stylesheet" href="assets/css/components/card.css" />
+  <link rel="stylesheet" href="assets/css/components/footer.css" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <!-- Header -->
+  <header class="navbar">
+    <!-- Burger menu -->
+    <button class="menu-toggle" id="menuToggle">☰</button>
+
+    <!-- Mobile Nav -->
+    <nav class="mobile-nav" id="mobileNav">
+      <a href="index.html">Home</a>
+      <a href="blog.html">Blog</a>
+      <a href="contacts.html"class="active">Contacts</a>
+      <a href="products.html">Product</a>
+    </nav>
+
+    <!-- Logo -->
+    <div class="logo">
+      <img src="assets/images/logo-whoimmal.png" alt="Whoimmal Logo" />
+    </div>
+
+    <!-- Desktop Nav -->
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="blog.html">Blog</a>
+      <a href="contacts.html"class="active">Contacts</a>
+      <a href="products.html">Product</a>
+      <div class="search-container">
+        <input type="text" id="searchInput" placeholder="Search..." />
+        <button id="searchBtn"><i class="fas fa-search"></i></button>
+      </div>
+    </nav>
+
+    <!-- Subscribe Button -->
+    <div class="subscribe-container" style="position: relative;">
+      <button id="subscribeToggleBtn" class="subscribe-btn">Subscribe</button>
+      <div id="subscribePopup" class="subscribe-popup">
+        <form id="subscribe-inline-form" action="https://formspree.io/f/mdkzrqby" method="POST">
+          <input type="email" name="email" placeholder="you@example.com" required />
+          <button type="submit">Send</button>
+        </form>
+        <p class="subscribe-message"></p>
+      </div>
+    </div>
+  </header>
+
+  <!-- Contact Section -->
+  <main class="contact-container">
+    <section class="contact-info">
+      <h1>Get In Touch</h1>
+      <p>Have a question, feedback, or just want to say hello? We'd love to hear from you.</p>
+      <ul>
+        <li><i class="fas fa-envelope"></i> support@whoimmal.com</li>
+        <li><i class="fas fa-phone"></i> +62 812-3456-7890</li>
+        <li><i class="fas fa-map-marker-alt"></i> Pangandaran, Indonesia</li>
+      </ul>
+    </section>
+
+    <section class="contact-form">
+      <form action="https://formspree.io/f/mdkzrqby" method="POST">
+        <input type="text" name="name" placeholder="Your Name" required />
+        <input type="email" name="email" placeholder="Your Email" required />
+        <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+  <div class="footer-content">
+    <p>© 2025 Whoimmal. All rights reserved.</p>
+    <div class="footer-links">
+      <a href="#">Privacy</a>
+      <a href="#">Terms</a>
+      <a href="#">Support</a>
+    </div>
+  </div>
+</footer>
+
+<!-- JavaScript -->
+<script src="assets/js/components/quote.js"></script>
+<script type="module" src="navbar.js"></script>
+<script src="assets/js/components/scroll.js"></script>
+<script src="assets/js/main.js"></script>
+<script src="assets/js/components/subscribe-popup.js"></script>
+<script type="module" src="scroll.js"></script>
+
+</html>

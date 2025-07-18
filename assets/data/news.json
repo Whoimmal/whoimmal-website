@@ -1,0 +1,23 @@
+[
+  {
+    "badge": "Update",
+    "title": "Kehadiran yang Tak Lagi Ditunda",
+    "excerpt": "Sebuah refleksi tentang keberanian menampilkan diri apa adanya di tengah derasnya ekspektasi.",
+    "image": "assets/images/news1.jpg",
+    "link": "#"
+  },
+  {
+    "badge": "Article",
+    "title": "Menjadi Nyata Meski Masih Luka",
+    "excerpt": "Bukan tentang pulih sempurna, tapi tentang bagaimana terus tumbuh meski retak.",
+    "image": "assets/images/news2.jpg",
+    "link": "#"
+  },
+  {
+    "badge": "Insight",
+    "title": "Antara Sunyi dan Suara yang Didengar",
+    "excerpt": "Mengenali suara hati sendiri di tengah bising dunia adalah bentuk keberanian yang sering dilupakan.",
+    "image": "assets/images/news3.jpg",
+    "link": "#"
+  }
+]

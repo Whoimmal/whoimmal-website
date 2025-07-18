@@ -1,0 +1,154 @@
+/* ========== Footer ========== */
+.site-footer {
+  background-color: var(--color-bg, #f9f4e8);
+  padding: 60px 32px 40px;
+  color: var(--color-text, #111);
+  font-family: var(--font-body);
+  border-top: 1px solid #ddd;
+}
+
+.footer-top {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 48px;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.footer-about,
+.footer-newsletter {
+  flex: 1 1 360px;
+}
+
+.footer-heading {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.footer-heading i {
+  font-size: 20px;
+}
+
+.footer-heading h3 {
+  font-size: 20px;
+  font-weight: 700;
+  font-family: var(--font-body);
+  text-transform: uppercase;
+}
+
+.footer-about p,
+.footer-newsletter p {
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--color-subtext, #333);
+  margin-bottom: 18px;
+}
+
+/* Form */
+.footer-form {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.footer-form input[type="email"] {
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+  transition: border-color 0.3s ease;
+}
+
+.footer-form input:focus {
+  border-color: var(--color-hover);
+}
+
+.subscribe-btn {
+  background-color: var(--color-accent, #f0c66f);
+  color: #111;
+  font-weight: bold;
+  padding: 10px 18px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s ease;
+}
+
+.subscribe-btn:hover {
+  background-color: var(--color-hover, #e35c4d);
+  color: #fff;
+}
+
+.form-message {
+  margin-top: 8px;
+  font-size: 14px;
+  font-style: italic;
+}
+
+
+/* Divider Line */
+.site-footer hr {
+  border: none;
+  border-top: 1px solid #111;
+  margin: 40px 0 24px;
+}
+
+/* Footer Bottom */
+.footer-bottom {
+  text-align: center;
+  font-size: 14px;
+}
+
+.footer-links {
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.footer-links a {
+  text-decoration: none;
+  color: var(--color-text);
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: var(--color-hover);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .footer-top {
+    flex-direction: column;
+    gap: 20px; /* kurangi gap antar block */
+  }
+
+  .footer-about,
+  .footer-newsletter {
+    margin-bottom: 0; /* hilangkan jarak bawah antar section */
+  }
+
+  .footer-heading {
+    margin-bottom: 8px;
+  }
+
+  .footer-about p,
+  .footer-newsletter p {
+    margin-bottom: 12px;
+  }
+
+  .footer-form {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .subscribe-btn {
+    width: 100%;
+  }
+}

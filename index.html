@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Whoimmal - Home</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Poppins:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" />
+
+  <!-- Font Share Tech Mono atau Orbitron -->
+  <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Orbitron:wght@400;600&display=swap" rel="stylesheet">
+
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="assets/css/utilities/variables.css" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="stylesheet" href="assets/css/components/navbar.css" />
+  <link rel="stylesheet" href="assets/css/components/hero.css" />
+  <link rel="stylesheet" href="assets/css/components/card.css" />
+  <link rel="stylesheet" href="assets/css/components/calendar.css" />
+  <link rel="stylesheet" href="assets/css/components/footer.css" />
+  <link rel="stylesheet" href="assets/css/utilities/animation.css" />
+  <link rel="stylesheet" href="assets/css/components/news.css" />
+
+</head>
+
+<body>
+  <!-- Header -->
+  <header class="navbar">
+    <!-- Burger menu -->
+
+    <!-- Mobile Nav -->
+    <nav class="mobile-nav" id="mobileNav">
+      <a href="index.html"class="active">Home</a>
+      <a href="blog.html">Blog</a>
+      <a href="shop.html">Shop</a>
+
+    </nav>
+
+    <!-- Desktop Nav -->
+    <nav class="nav-links">
+      <a href="index.html" class="active">Home</a>
+      <a href="blog.html">Blog</a>
+      <a href="shop.html">Shop</a>
+      <!-- Desktop Search -->
+  <div class="search-container">
+    <input type="text" id="searchInput" placeholder="Search..." />
+    <button id="searchBtn"><i class="fas fa-search"></i></button>
+  </div>
+
+  <!-- Mobile Icon Search -->
+  <div class="search-icon-container">
+    <button class="search-icon-btn" id="searchToggleBtn">
+      <i class="fas fa-search"></i>
+    </button>
+  </div>
+    </nav>
+
+  </header>
+
+  <!-- Main Layout -->
+  <div class="layout-wrapper">
+    <main class="main-content">
+      <!-- Hero Section -->
+<section>
+    <div id="shape" class="about">
+      <img src="assets/images/whoimmal-header.png" alt="about"
+      <img src=""
+    </div>
+    </section>
+
+<section class="hero">
+  <div class="hero-left">
+    <div class="hero-text-wrapper">
+      <h1 class="hero-title">You don’t need to be fully healed to be fully worthy!</h1>
+      <p class="hero-subtitle">Explore thoughts, feelings, and untold stories with every quote you create.</p>
+      <button class="hero-button" onclick="generateQuote()">Start the Quote</button>
+      <div id="quote-display" class="quote-box"></div>
+    </div>
+  </div>
+</section>
+
+
+<section class="calendar-section">
+  <h2 class="section-title">Calendar of Whoimmal</h2>
+  <div class="calendar-header">
+<button id="prevMonthBtn"><i class="fas fa-chevron-left"></i></button>
+  <h3 id="monthYearDisplay"></h3>
+<button id="nextMonthBtn"><i class="fas fa-chevron-right"></i></button>
+</div>
+    <div id="calendar" class="calendar-container"></div>
+</section>
+    </main>
+  </div>
+
+<!-- News -->
+<section class="news-section">
+  <h2 class="section-title">Latest Stories</h2>
+  <div class="news-grid" id="newsGrid">
+    <!-- Cards akan dimuat oleh JS -->
+  </div>
+</section>
+
+
+  <!-- Footer -->
+<footer class="site-footer">
+  <div class="footer-top">
+    <div class="footer-about">
+      <div class="footer-heading">
+        <i class="fas fa-globe"></i>
+        <h3>Whoimmal</h3>
+      </div>
+      <p>Whoimmal is a gentle space for self-reflection and compassion — a quiet reminder that becoming yourself begins with listening to your inner voice.</p>
+      </div>
+
+    <div class="footer-newsletter">
+      <div class="footer-heading">
+        <i class="fas fa-newspaper"></i>
+        <h3>Newsletter</h3>
+      </div>
+      <p>Subscribe to receive heartfelt notes, gentle reminders, and a place to return to for the weary self.</p>
+      <form class="footer-form" action="https://formspree.io/f/mdkzrqby" method="POST">
+        <input type="email" name="email" placeholder="your@email.com" required />
+        <button type="submit" class="subscribe-btn">Subscribe</button>
+      </form>
+    </div>
+  </div>
+
+  <hr/>
+
+  <div class="footer-bottom">
+    <div class="footer-links">
+      <a href="#">Supports</a>
+      <a href="#">Terms</a>
+      <a href="#">Privacy</a>
+      <a href="#">Contacts</a>
+    </div>
+    <p>© 2025 Whoimmal. All rights reserved.</p>
+  </div>
+</footer>
+
+
+
+  <!-- JavaScript -->
+  <script src="assets/js/components/quote.js"></script>
+  <script type="module" src="assets/js/components/navbar.js"></script>
+  <script type="module" src="assets/js/components/scroll.js"></script>
+  <script type="module" src="assets/js/main.js"></script>
+  <script type="module" src="assets/js/components/scroll.js"></script>
+  <script type="module" src="assets/js/components/calendar.js"defer></script>
+  <script type="module" src="assets/js/components/search-popup.js"></script>
+  <script type="module" src="assets/js/components/news.js" defer></script>
+<script type="module" src="assets/js/components/subscribe.js"></script>
+</body>
+</html>

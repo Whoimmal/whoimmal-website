@@ -1,0 +1,104 @@
+/* ========== Hero Section (Revised) ========== */
+.hero {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 48px;
+  padding: 80px 40px;
+  max-width: 1280px;
+  margin: 2 auto;
+}
+
+
+.hero-text-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.hero-title {
+  font-family: var(--font-body);
+  font-size: 40px;
+  font-style: bold;
+  line-height: 1.2;
+  justify-content: space-between;
+  color: var(--color-text);
+  text-transform: uppercase;
+  margin-bottom: 8px;
+  animation: fadeIn 0.8s ease forwards;
+}
+
+.hero-subtitle {
+  font-size: 17px;
+  color: #444;
+  font-weight: 400;
+  margin-bottom: 24px;
+  justify-content: space-between;
+  animation: fadeIn 1.2s ease forwards;
+}
+
+.hero-button {
+  padding: 12px 28px;
+  background-color: var(--color-text);
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-bottom: 20px;
+}
+
+.hero-button:hover {
+  background-color: var(--color-hover);
+}
+
+/* Quote Container */
+.quote-box {
+  padding: 20px 24px;
+  border-left: px solid var(--color-text);
+  background-color: #fff;
+  color: var(--color-text);
+  font-style: bold;
+  font-size: 16px;
+  border-radius: 8px;
+  max-width: 500px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+  animation: fadeIn 1.4s ease forwards;
+}
+
+.hero-right {
+  flex: 1 1 320px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* ========== Responsive ========== */
+@media (max-width: 768px) {
+  .hero {
+    flex-direction: column;
+    align-items: center;
+    padding: 48px 24px;
+    text-align: center;
+  }
+
+  .hero-title {
+    font-size: 38px;
+  }
+
+  .hero-subtitle {
+    font-size: 15px;
+  }
+
+  .hero-button {
+    align-self: center;
+  }
+
+  .quote-box {
+    font-size: 14px;
+    margin: 0 auto;
+  }
+}
