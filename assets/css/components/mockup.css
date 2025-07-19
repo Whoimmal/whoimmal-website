@@ -1,0 +1,147 @@
+/* --- Section Layout --- */
+.tshirt-section {
+text-align: center;
+margin: 40px auto;
+padding: 1rem;
+max-width: 1100px;
+}
+
+.tshirt-heading {
+font-family: var(--font-body, sans-serif);
+font-size: 46px;
+font-weight: bold;
+text-transform: uppercase;
+line-height: 1.2;
+margin-bottom: 2rem;
+}
+
+/* --- Preview Layout --- */
+.tshirt-preview {
+display: flex;
+justify-content: center;
+flex-wrap: wrap;
+gap: 2rem;
+}
+
+/* --- View Containers --- */
+.tshirt-view {
+display: flex;
+flex-direction: column;
+align-items: center;
+}
+
+/* --- Front View: No wrapper --- */
+.tshirt-img {
+width: 100%;
+max-width: 400px;
+height: auto;
+display: block;
+box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+
+/* --- Back View: with wrapper and overlay --- */
+.mockup-wrapper {
+position: relative;
+width: 400px;
+max-width: 100%;
+}
+
+.quote-back {
+position: absolute;
+top: 30%;
+left: 50%;
+transform: translateX(-50%);
+color: white;
+font-size: 0.60rem;
+font-weight: 600;
+text-align: center;
+padding: 0 10px;
+width: 70%;
+max-width: 140px;
+line-height: 1.4;
+word-wrap: break-word;
+overflow-wrap: break-word;
+white-space: normal;
+box-sizing: border-box;
+}
+
+/* --- Label --- */
+.view-label {
+font-style: italic;
+font-size: 0.9rem;
+margin-top: 0.5rem;
+color: #555;
+}
+
+/* --- Quote Controls --- */
+.quote-controls {
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+margin-top: 2rem;
+width: 100%;
+padding: 0 1rem;
+box-sizing: border-box;
+}
+
+#quoteInput {
+padding: 0.8rem 1rem;
+width: 100%;
+max-width: 400px;
+border-radius: 8px;
+border: 1px solid #ccc;
+font-size: 1rem;
+text-align: center;
+}
+
+.btn-group {
+display: flex;
+gap: 1rem;
+justify-content: center;
+flex-wrap: wrap;
+margin-top: 1rem;
+}
+
+#generateBtn,
+#buyBtn {
+padding: 0.6rem 1.4rem;
+border: none;
+border-radius: 8px;
+font-weight: 600;
+cursor: pointer;
+font-size: 1rem;
+text-align: center;
+}
+
+#generateBtn {
+background-color: #222;
+color: white;
+}
+
+#buyBtn {
+background-color: #f5c16c;
+color: #222;
+}
+
+/* --- Responsive --- */
+@media (max-width: 600px) {
+.tshirt-heading {
+font-size: 1.6rem;
+}
+
+.mockup-wrapper,
+.tshirt-img {
+max-width: 260px;
+}
+
+.quote-back {
+font-size: 0.60rem;
+top: 28%;
+}
+
+#quoteInput {
+width: 90%;
+}
+}

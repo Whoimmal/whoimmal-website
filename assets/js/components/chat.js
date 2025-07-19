@@ -8,7 +8,7 @@ import {
 const firebaseConfig = {
   apiKey: "AIzaSyB98E5TYR9ar3hCxBgXMcYZmaBDC4x3M1s",
   authDomain: "whoimmal-discussion-chat.firebaseapp.com",
-  databaseURL: "https://whoimmal-discussion-chat-default-rtdb.firebaseio.com",
+  databaseURL: "https://whoimmal-discussion-chat-default-rtdb.asia-southeast1.firebasedatabase.app",
   projectId: "whoimmal-discussion-chat",
   storageBucket: "whoimmal-discussion-chat.firebasestorage.app",
   messagingSenderId: "629785852894",

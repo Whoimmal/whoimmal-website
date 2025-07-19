@@ -23,6 +23,7 @@
   <link rel="stylesheet" href="assets/css/components/footer.css" />
   <link rel="stylesheet" href="assets/css/utilities/animation.css" />
   <link rel="stylesheet" href="assets/css/components/shop.css" />
+  <link rel="stylesheet" href="assets/css/components/mockup.css" />
 
   <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
@@ -64,21 +65,46 @@
 <body>
 
 <!-- MAIN -->
+
+<section class="tshirt-section">
+<h2 class="tshirt-heading">Design Your T-shirt With Your Quote</h2>
+
+<div class="tshirt-preview">
+<!-- Front View (no quote) -->
+<div class="tshirt-view">
+<img src="assets/images/mockup-depan.png" alt="Front View" class="tshirt-img" />
+<span class="view-label">Front View</span>
+</div>
+
+<!-- Back View (with quote) -->
+<div class="tshirt-view">
+<div class="mockup-wrapper">
+<img src="assets/images/mockup-belakang.png" alt="Back View" class="tshirt-img" />
+<div id="quoteBack" class="quote-back">Your Quote</div>
+</div>
+<span class="view-label">Back View</span>
+</div>
+</div>
+
+<!-- Quote Controls -->
+<div class="quote-controls">
+<input type="text" id="quoteInput" placeholder="Write your quote..." />
+<div class="btn-group">
+<button id="generateBtn">Generate</button>
+<button id="buyBtn">Pre-Order</button>
+</div>
+</div>
+</section>
+
   <main class="products-layout">
     <section class="products-intro">
-      <h1 class="products-title">Whoimmal Store</h1>
+      <h2 class="products-title">Whoimmal Store</h2>
       <p class="products-subtitle">Thoughtfully designed, mindfully crafted.</p>
-    </section>
-
-    <section>
-    <div id="shop-post" class="shop-post">
-      <img src="assets/images/tshirt-depan-belakang.png" alt="Clothings"
-    </div>
     </section>
 
     <section class="products-grid">
       <div class="product-card">
-        <img src="assets/images/ebook.jpg" alt="Ebook Cover" />
+        <img src="assets/images/1.jpg" alt="Ebook Cover" />
         <div class="product-info">
           <h3 class="product-name">Healing Journal eBook</h3>
           <p class="product-price">Rp49.000</p>
@@ -87,7 +113,7 @@
       </div>
 
       <div class="product-card">
-        <img src="assets/images/shirt.jpg" alt="T-Shirt" />
+        <img src="assets/images/tshirt-depan-belakang.png" alt="T-Shirt" />
         <div class="product-info">
           <h3 class="product-name">"Evaluation" T-Shirt</h3>
           <p class="product-price">Rp139.000</p>
@@ -96,7 +122,7 @@
       </div>
 
       <div class="product-card">
-        <img src="assets/images/stickerpack.jpg" alt="Stickers" />
+        <img src="assets/images/2.jpg" alt="Stickers" />
         <div class="product-info">
           <h3 class="product-name">Quote Sticker Pack</h3>
           <p class="product-price">Rp29.000</p>
@@ -153,5 +179,5 @@
   <script type="module" src="assets/js/main.js"></script>
   <script type="module" src="assets/js/components/scroll.js"></script>
   <script type="module" src="assets/js/components/search-popup.js"></script>
-
+<script type="module" src="assets/js/components/mockup.js"></script>
 </html>

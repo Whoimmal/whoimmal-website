@@ -1,23 +1,10 @@
 
-.shop-post {
-  display: flex;
-  flex-direction: column;
-  overflow: hidden;
-  box-shadow: none;
-  animation: fadeIn 2s;
-@keyframes fadeIn {
-  0% {opacity: 0;}
-  50% {opacity: 5;}
-  100% {opacity: 0;}
-}
-}
-
-
 .products-layout {
   padding: 60px 5%;
   background-color: var(--color-bg);
   color: var(--color-text);
   font-family: 'Poppins', sans-serif;
+  border-top: 1px solid #ddd;
 }
 
 .products-intro {
@@ -93,4 +80,15 @@
 
 .product-btn:hover {
   background-color: var(--color-hover, #e35c4d);
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+.products-title {
+font-size: 1.8rem;
+}
+
+.products-subtitle {
+font-size: 0.80rem;
+}
 }
