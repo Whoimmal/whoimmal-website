@@ -29,38 +29,39 @@
 </head>
 
 <body>
-  <!-- Header -->
-  <header class="navbar">
-    <!-- Burger menu -->
+ <!-- Header -->
+<header class="navbar">
+<!-- Mobile Nav -->
+<nav class="mobile-nav" id="mobileNav">
+<a href="index.html" class="active">Home</a>
+<a href="blog.html">Blog</a>
+<a href="shop.html">Shop</a>
+</nav>
 
-    <!-- Mobile Nav -->
-    <nav class="mobile-nav" id="mobileNav">
-      <a href="index.html"class="active">Home</a>
-      <a href="blog.html">Blog</a>
-      <a href="shop.html">Shop</a>
+<!-- Desktop Nav -->
+<nav class="nav-links">
+<a href="index.html" class="active">Home</a>
+<a href="blog.html">Blog</a>
+<a href="shop.html">Shop</a>
 
-    </nav>
+<!-- Desktop Search -->
+<div>
+<form class="search-container" action="/search" method="get">
+<input type="text" name="q" id="searchInput" placeholder="Search..." />
+<button type="submit" id="searchBtn">
+<i class="fas fa-search"></i>
+</button>
+</form>
+</div>
 
-    <!-- Desktop Nav -->
-    <nav class="nav-links">
-      <a href="index.html" class="active">Home</a>
-      <a href="blog.html">Blog</a>
-      <a href="shop.html">Shop</a>
-      <!-- Desktop Search -->
-  <div class="search-container">
-    <input type="text" id="searchInput" placeholder="Search..." />
-    <button id="searchBtn"><i class="fas fa-search"></i></button>
-  </div>
-
-  <!-- Mobile Icon Search -->
-  <div class="search-icon-container">
-    <button class="search-icon-btn" id="searchToggleBtn">
-      <i class="fas fa-search"></i>
-    </button>
-  </div>
-    </nav>
-
-  </header>
+<!-- Mobile Icon Search -->
+<div class="search-icon-container">
+<button class="search-icon-btn" id="searchToggleBtn">
+<i class="fas fa-search"></i>
+</button>
+</div>
+</nav>
+</header>
 
   <!-- Main Layout -->
   <div class="layout-wrapper">
@@ -147,7 +148,7 @@
 
   <!-- JavaScript -->
   <script src="assets/js/components/quote.js"></script>
-  <script type="module" src="assets/js/components/navbar.js"></script>
+  <script type="module" src="assets/js/components/search-popup.js"></script>
   <script type="module" src="assets/js/components/scroll.js"></script>
   <script type="module" src="assets/js/main.js"></script>
   <script type="module" src="assets/js/components/scroll.js"></script>

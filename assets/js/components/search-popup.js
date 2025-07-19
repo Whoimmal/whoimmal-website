@@ -1,16 +1,20 @@
-document.addEventListener("DOMContentLoaded", () => {
-  const searchBtn = document.getElementById("searchToggleBtn");
-  const searchPopup = document.getElementById("searchPopup");
+document.addEventListener("DOMContentLoaded", function () {
+  const searchToggleBtn = document.getElementById("searchToggleBtn");
+  const searchForm = document.querySelector(".search-container");
 
-  searchBtn.addEventListener("click", (e) => {
-    e.stopPropagation();
-    searchPopup.classList.toggle("show");
+  // Toggle form search di mobile
+  searchToggleBtn.addEventListener("click", () => {
+    searchForm.classList.toggle("show");
+    if (searchForm.classList.contains("show")) {
+      searchForm.querySelector("input").focus();
+    }
   });
 
-  // Klik di luar pop-up menutupnya
-  window.addEventListener("click", (e) => {
-    if (!searchPopup.contains(e.target) && !searchBtn.contains(e.target)) {
-      searchPopup.classList.remove("show");
+  // Klik di luar akan menutup form di mobile
+  document.addEventListener("click", (e) => {
+    const isClickInside = searchForm.contains(e.target) || searchToggleBtn.contains(e.target);
+    if (!isClickInside) {
+      searchForm.classList.remove("show");
     }
   });
 });

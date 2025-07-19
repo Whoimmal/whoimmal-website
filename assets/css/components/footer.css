@@ -100,14 +100,14 @@
 /* Footer Bottom */
 .footer-bottom {
   text-align: center;
-  font-size: 14px;
+  font-size: 12px;
 }
 
 .footer-links {
   margin-bottom: 10px;
   display: flex;
   justify-content: center;
-  gap: 24px;
+  gap: 10px;
   flex-wrap: wrap;
 }
 
@@ -123,32 +123,3 @@
 }
 
 /* Responsive */
-@media (max-width: 600px) {
-  .footer-top {
-    flex-direction: column;
-    gap: 20px; /* kurangi gap antar block */
-  }
-
-  .footer-about,
-  .footer-newsletter {
-    margin-bottom: 0; /* hilangkan jarak bawah antar section */
-  }
-
-  .footer-heading {
-    margin-bottom: 8px;
-  }
-
-  .footer-about p,
-  .footer-newsletter p {
-    margin-bottom: 12px;
-  }
-
-  .footer-form {
-    flex-direction: column;
-    gap: 10px;
-  }
-
-  .subscribe-btn {
-    width: 100%;
-  }
-}
