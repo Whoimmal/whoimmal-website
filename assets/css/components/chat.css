@@ -230,9 +230,10 @@ body {
 @media (max-width: 600px) {
   .discussion-intro h2 {
     font-size: 1.8rem ;
+    margin-bottom: 10px;
   }
 
   .discussion-intro p {
-    font-size: 14px;
+    font-size: 13px;
   }
 }
