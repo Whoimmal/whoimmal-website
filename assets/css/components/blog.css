@@ -110,3 +110,13 @@
 .bordered-icons button:hover {
   background: var(--color-accent-light);
 }
+
+@media (max-width: 600px) {
+  .blog-title {
+    font-size: 1.8rem ;
+  }
+
+  .blog-subtitle {
+    font-size: 14px;
+  }
+}

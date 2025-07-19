@@ -123,3 +123,9 @@
 .reveal-delay-3 {
   animation-delay: 0.3s;
 }
+
+@media (max-width: 600px) {
+  .news-section .section-title {
+  font-size: 1.8rem;
+  }
+}

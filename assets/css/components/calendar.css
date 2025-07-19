@@ -147,12 +147,15 @@
   scrollbar-width: thin;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 600px) {
   .calendar-container {
     grid-template-columns: repeat(2, 1fr);
     gap: 8px;
   }
 
+  .section-title {
+    font-size: 1.8rem ;
+  }
   .calendar-header h3 {
     font-size: 16px;
   }
