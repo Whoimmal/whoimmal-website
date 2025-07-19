@@ -228,10 +228,11 @@ body {
 
 
 @media (max-width: 600px) {
-.discussion-intro h2 {
-  font-size: 1.8rem ;
+  .discussion-intro h2 {
+    font-size: 1.8rem ;
   }
-.discussion-intro p {
-  font-size: 14px;
-}
+
+  .discussion-intro p {
+    font-size: 14px;
+  }
 }
