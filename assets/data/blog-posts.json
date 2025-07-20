@@ -5,7 +5,7 @@
     "subtitle": "Sebuah kisah tentang penyembuhan, ruang, dan gema batin.",
     "image": "assets/images/hero-1.jpg",
     "badge": "Featured",
-    "link": "post.html?id=1"
+    "link": "#"
   },
   {
     "id": 2,
@@ -13,7 +13,7 @@
     "subtitle": "Terkadang malam mampu membuat diri berkata jujur tentang apa yang dialami...",
     "image": "assets/images/post1.jpg",
     "badge": "Reflection",
-    "link": "post.html?id=2"
+    "link": "#"
   },
   {
     "id": 3,
@@ -21,7 +21,7 @@
     "subtitle": "Bahkan diam pun memiliki cerita. Dan terkadang itu yang paling keras.",
     "image": "assets/images/post2.jpg",
     "badge": "Essai",
-    "link": "post.html?id=3"
+    "link": "#"
   },
   {
     "id": 4,
@@ -29,6 +29,6 @@
     "subtitle": "Kamu telah berhasil melewati hari hari yang tidak pernah kamu duga akan kamu lakukan.",
     "image": "assets/images/post3.jpg",
     "badge": "Memoir",
-    "link": "post.html?id=4"
+    "link": "#"
   }
 ]
