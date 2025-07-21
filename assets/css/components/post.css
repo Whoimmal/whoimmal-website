@@ -1,55 +1,95 @@
 body {
-  margin: 0;
-  font-family: 'Poppins', sans-serif;
-  background: #fff9ef;
-  color: #111;
+margin: 0;
+font-family: 'Georgia', serif;
+background-color: #fcfcfc;
+color: #222;
+line-height: 1.7;
 }
 
-.post-container {
-  position: relative;
-  max-width: 800px;
-  margin: 40px auto;
-  padding: 32px;
-  background: #fff;
-  border-radius: 12px;
-  box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+.blog-article {
+max-width: 750px;
+margin: 2 auto;
+padding: 2rem 1rem;
 }
 
-.close-btn {
-  position: fixed;
-  top: 24px;
-  right: 24px;
-  background: #111;
-  color: #fff;
-  border: none;
-  border-radius: 50%;
-  width: 36px;
-  height: 36px;
-  font-size: 20px;
-  cursor: pointer;
-  z-index: 9999;
+.cover {
+text-align: center;
+margin-bottom: 3rem;
 }
 
-#post-content img {
-  width: 100%;
-  border-radius: 8px;
-  margin-bottom: 24px;
+.section-title {
+font-size: 2.5rem;
+font-weight: 700;
+position: relative;
+display: inline-block;
+margin-bottom: 0.5rem;
 }
 
-#post-content h1 {
-  font-size: 32px;
-  margin-bottom: 12px;
+.section-title::after {
+content: '';
+position: absolute;
+bottom: -5px;
+left: 0;
+width: 100%;
+height: 6px;
+background: #d8e5ff;
+z-index: -1;
 }
 
-#post-content p.subtitle {
-  font-size: 16px;
-  color: #666;
-  margin-bottom: 24px;
+.subtitle {
+font-size: 1.2rem;
+color: #666;
 }
 
-#post-content .post-body {
-  font-size: 16px;
-  line-height: 1.8;
-  color: #333;
-  margin-top: 24px;
+.content h2 {
+font-size: 1.4rem;
+margin-top: 2rem;
+position: relative;
+display: inline-block;
+}
+
+.content h2::after {
+content: '';
+position: absolute;
+bottom: -5px;
+left: 0;
+width: 100%;
+height: 5px;
+background-color: #ffe7d6;
+z-index: -1;
+}
+
+.content p {
+margin: 1.2rem 0;
+}
+
+.highlight-quote {
+font-style: italic;
+font-weight: 500;
+margin: 2rem 0;
+padding-left: 1rem;
+border-left: 4px solid #ccc;
+background: #f8f8f8;
+position: relative;
+}
+
+.highlight-quote::before {
+content: "“";
+font-size: 2rem;
+position: absolute;
+top: -10px;
+left: 5px;
+color: #bbb;
+}
+
+/* Fade-in Animation */
+.fade-in {
+opacity: 0;
+transform: translateY(20px);
+transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-in.visible {
+opacity: 1;
+transform: translateY(0);
 }

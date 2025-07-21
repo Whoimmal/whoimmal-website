@@ -1,0 +1,84 @@
+/* Loader background */
+#page-loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.65);
+  backdrop-filter: blur(10px);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+/* Loader content */
+.loader-content {
+  text-align: center;
+}
+
+.logo-png {
+  width: 120px;
+  height: auto;
+  animation: fadeIn 1.5s ease-in-out;
+}
+
+/* Progress bar */
+.progress-bar {
+  margin-top: 20px;
+  width: 150px;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.progress-bar span {
+  display: block;
+  height: 100%;
+  background-color: #fff;
+  width: 0;
+  animation: loadingBar 2.5s ease-in-out forwards;
+}
+
+/* Transisi halaman */
+body.not-loaded .layout-wrapper,
+body.not-loaded header,
+body.not-loaded main,
+body.not-loaded footer {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.8s ease-in-out;
+}
+
+body.loaded .layout-wrapper,
+body.loaded header,
+body.loaded main,
+body.loaded footer {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Animasi */
+@keyframes fadeIn {
+  0% { opacity: 0; transform: scale(0.9); }
+  100% { opacity: 1; transform: scale(1); }
+}
+
+@keyframes loadingBar {
+  0% { width: 0; }
+  100% { width: 100%; }
+}
+
+body.not-loaded *:not(#page-loader):not(#page-loader *) {
+  opacity: 0 !important;
+  visibility: hidden !important;
+}
+
+body.loaded * {
+  opacity: 1 !important;
+  visibility: visible !important;
+  transition: opacity 0.8s ease-in-out;
+}

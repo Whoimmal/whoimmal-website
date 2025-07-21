@@ -23,12 +23,24 @@
   <link rel="stylesheet" href="assets/css/components/footer.css" />
   <link rel="stylesheet" href="assets/css/utilities/animation.css" />
   <link rel="stylesheet" href="assets/css/components/blog.css" />
-  <link rel="stylesheet" href="assets/css/components/qna.css" />
   <link rel="stylesheet" href="assets/css/components/chat.css" />
+  <link rel="stylesheet" href="assets/css/components/transition.css" />
+  <link rel="stylesheet" href="assets/css/components/loader.css" />
+  </head>
+
 </head>
 
-<body>
- <!-- Header -->
+<body class="not-loaded">
+
+  <div id="page-loader">
+  <div class="loader-bg"></div>
+  <div class="loader-content">
+    <img src="assets/images/Whoimmal-white.png" alt="Whoimmal Logo" class="logo-png">
+    <div class="progress-bar"><span></span></div>
+  </div>
+  </div>
+
+<!-- Header -->
 <header class="navbar">
 <div class="navbar-inner">
 <!-- Mobile Nav -->
@@ -62,7 +74,7 @@
 </div>
 </header>
 
-<body>
+
 
   <section class="blog-layout">
   <div class="blog-intro">
@@ -150,14 +162,12 @@
 
 
   <!-- JavaScript -->
-
-
+  <script type="module" src="assets/js/components/loader.js"></script>
+  <script type="module" src="assets/js/components/page-transition.js"></script>
   <script type="module" src="assets/js/main.js"></script>
   <script type="module" src="assets/js/components/search-popup.js"></script>
   <script type="module" src="assets/js/components/blog.js"defer></script>
-  <script type="module" src="assets/js/components/qna.js"defer></script>
   <script type="module" src="assets/js/components/chat.js"></script>
-
 
 </body>
 </html>

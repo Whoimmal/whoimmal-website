@@ -1,0 +1,16 @@
+/* Halaman secara default transparan saat dimuat */
+body {
+opacity: 0;
+transition: opacity 0.5s ease-in-out;
+}
+
+/* Saat halaman selesai dimuat */
+body.page-loaded {
+opacity: 1;
+}
+
+/* Saat akan keluar halaman */
+body.page-fadeout {
+opacity: 0;
+transition: opacity 0.5s ease-in-out;
+}

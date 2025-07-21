@@ -23,12 +23,25 @@
   <link rel="stylesheet" href="assets/css/components/footer.css" />
   <link rel="stylesheet" href="assets/css/components/shop.css" />
   <link rel="stylesheet" href="assets/css/components/mockup.css" />
+  <link rel="stylesheet" href="assets/css/components/transition.css" />
+  <link rel="stylesheet" href="assets/css/components/loader.css" />
+  </head>
 
   <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
 </head>
 
-<body>
- <!-- Header -->
+<body class="not-loaded">
+
+  <div id="page-loader">
+  <div class="loader-bg"></div>
+  <div class="loader-content">
+    <img src="assets/images/Whoimmal-white.png" alt="Whoimmal Logo" class="logo-png">
+    <div class="progress-bar"><span></span></div>
+  </div>
+  </div>
+
+<!-- Header -->
 <header class="navbar">
 <div class="navbar-inner">
 <!-- Mobile Nav -->
@@ -62,7 +75,6 @@
 </div>
 </header>
 
-<body>
 
 <!-- MAIN -->
 
@@ -173,8 +185,12 @@
 
 
   <!-- JavaScript -->
-
+  <script type="module" src="assets/js/components/loader.js"></script>
+  <script type="module" src="assets/js/components/page-transition.js"></script>
   <script type="module" src="assets/js/main.js"></script>
   <script type="module" src="assets/js/components/search-popup.js"></script>
-<script type="module" src="assets/js/components/mockup.js"></script>
+  <script type="module" src="assets/js/components/mockup.js"></script>
+  <script type="module" src="assets/js/components/subscribe.js"></script>
+
+</body>
 </html>

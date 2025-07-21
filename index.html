@@ -23,51 +23,59 @@
   <link rel="stylesheet" href="assets/css/components/card.css" />
   <link rel="stylesheet" href="assets/css/components/calendar.css" />
   <link rel="stylesheet" href="assets/css/components/footer.css" />
-  <link rel="stylesheet" href="assets/css/utilities/animation.css" />
   <link rel="stylesheet" href="assets/css/components/news.css" />
+  <link rel="stylesheet" href="assets/css/components/loader.css" />
+  </head>
 
-</head>
+<body class="not-loaded">
 
-<body>
-<!-- Header -->
-<header class="navbar">
-<div class="navbar-inner">
-<!-- Mobile Nav -->
-<nav class="mobile-nav" id="mobileNav">
-<a href="index.html"class="active">Home</a>
-<a href="blog.html">Blog</a>
-<a href="shop.html">Shop</a>
-</nav>
+  <div id="page-loader">
+  <div class="loader-bg"></div>
+  <div class="loader-content">
+    <img src="assets/images/Whoimmal-white.png" alt="Whoimmal Logo" class="logo-png">
+    <div class="progress-bar"><span></span></div>
+  </div>
+  </div>
 
-<!-- Desktop Nav -->
-<nav class="nav-links">
-<a href="index.html"class="active">Home</a>
-<a href="blog.html">Blog</a>
-<a href="shop.html">Shop</a>
+  <!-- Header -->
+  <header class="navbar">
+  <div class="navbar-inner">
+  <!-- Mobile Nav -->
+  <nav class="mobile-nav" id="mobileNav">
+  <a href="index.html"class="active">Home</a>
+  <a href="blog.html">Blog</a>
+  <a href="shop.html">Shop</a>
+  </nav>
 
-<!-- Desktop Search -->
-<form class="search-container" action="/search" method="get">
-<input type="text" name="q" id="searchInput" placeholder="Search..." />
-<button type="submit" id="searchBtn">
-<i class="fas fa-search"></i>
-</button>
-</form>
+  <!-- Desktop Nav -->
+  <nav class="nav-links">
+  <a href="index.html"class="active">Home</a>
+  <a href="blog.html">Blog</a>
+  <a href="shop.html">Shop</a>
 
-<!-- Mobile Icon Search -->
-<div class="search-icon-container">
-<button class="search-icon-btn" id="searchToggleBtn">
-<i class="fas fa-search"></i>
-</button>
-</div>
-</nav>
-</div>
-</header>
+  <!-- Desktop Search -->
+  <form class="search-container" action="/search" method="get">
+  <input type="text" name="q" id="searchInput" placeholder="Search..." />
+  <button type="submit" id="searchBtn">
+  <i class="fas fa-search"></i>
+  </button>
+  </form>
+
+  <!-- Mobile Icon Search -->
+  <div class="search-icon-container">
+  <button class="search-icon-btn" id="searchToggleBtn">
+  <i class="fas fa-search"></i>
+  </button>
+  </div>
+  </nav>
+  </div>
+  </header>
 
   <!-- Main Layout -->
   <div class="layout-wrapper">
     <main class="main-content">
       <!-- Hero Section -->
-<section>
+  <section>
     <div id="shape" class="about">
       <img src="assets/images/whoimmal-header.png" alt="about"
       <img src=""
@@ -147,14 +155,14 @@
 
 
   <!-- JavaScript -->
+  <script type="module" src="assets/js/components/loader.js"></script>
+  <script type="module" src="assets/js/components/page-transition.js"></script>
   <script src="assets/js/components/quote.js"></script>
-  <script type="module" src="assets/js/components/search-popup.js"></script>
-  <script type="module" src="assets/js/components/scroll.js"></script>
   <script type="module" src="assets/js/main.js"></script>
   <script type="module" src="assets/js/components/scroll.js"></script>
   <script type="module" src="assets/js/components/calendar.js"defer></script>
   <script type="module" src="assets/js/components/search-popup.js"></script>
   <script type="module" src="assets/js/components/news.js" defer></script>
-<script type="module" src="assets/js/components/subscribe.js"></script>
+  <script type="module" src="assets/js/components/subscribe.js"></script>
 </body>
 </html>
