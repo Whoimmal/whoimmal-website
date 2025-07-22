@@ -49,7 +49,7 @@
 .nav-links a::after {
   content: "";
   position: absolute;
-  left: 14px;
+  left: 12px;
   bottom: 6px;
   height: 2px;
   width: 0;
