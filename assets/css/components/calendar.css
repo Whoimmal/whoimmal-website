@@ -47,7 +47,7 @@
 }
 
 .day {
-  background: #fff;
+  background: var(--color-accent);
   padding: 14px;
   border-radius: 12px;
   min-height: 80px;
