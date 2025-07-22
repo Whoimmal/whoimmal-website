@@ -47,7 +47,7 @@
 }
 
 .day {
-  background: var(--color-accent);
+  background: #fff;
   padding: 14px;
   border-radius: 12px;
   min-height: 80px;
@@ -129,8 +129,8 @@
 }
 
 .day.today {
-  background-color: rgba(240, 198, 111, 0.15);
-  border: 1px solid var(--color-accent);
+  background-color: var(--color-accent));
+  border: 1px solid var(--color-text);
 }
 .day.loading {
   background: repeating-linear-gradient(45deg, #eee, #eee 10px, #fff 10px, #fff 20px);
