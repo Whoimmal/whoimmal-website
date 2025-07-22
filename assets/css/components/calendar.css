@@ -43,9 +43,6 @@
 .calendar-container .day:hover {
   background-color: var(--color-accent);
   color: #fff;
-  transform: scale(.calendar-container .day.active {
-  background-color: var(--color-accent);
-  color: #fff;
   transform: scale(1.03);
 }
 
@@ -133,7 +130,7 @@
 
 .day.today {
   background-color: var(--color-accent));
-  border: 1px solid var(--color-text);
+  border: 1px solid #fff;
 }
 .day.loading {
   background: repeating-linear-gradient(45deg, #eee, #eee 10px, #fff 10px, #fff 20px);
