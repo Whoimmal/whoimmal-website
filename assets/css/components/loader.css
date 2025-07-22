@@ -22,25 +22,45 @@
 .logo-png {
   width: 120px;
   height: auto;
-  animation: fadeIn 1.5s ease-in-out;
+  animation: logo 2s ease-out 0s infinite normal none;
+}
+
+@keyframes logo {
+  0% {
+	transform: scale(1);
+  }
+
+  50% {
+	transform: scale(1.1);
+  }
+
+  100% {
+	transform: scale(1);
+  }
 }
 
 /* Progress bar */
-.progress-bar {
-  margin-top: 20px;
-  width: 150px;
-  height: 4px;
-  background: rgba(255, 255, 255, 0.2);
-  border-radius: 2px;
-  overflow: hidden;
-}
 
-.progress-bar span {
-  display: block;
-  height: 100%;
-  background-color: #fff;
-  width: 0;
-  animation: loadingBar 2.5s ease-in-out forwards;
+
+.progress-bar {
+  width:120px;
+  height:22px;
+  border-radius: 20px;
+  color:#F4F4F4;
+  border:2px solid;
+  position: relative;
+}
+.progress-bar::before {
+  content:"";
+  position: absolute;
+  margin:2px;
+  inset:0 100% 0 0;
+  border-radius: inherit;
+  background:#F4F4F4;
+  animation:p6 2.5s ease-in-out forwards;
+}
+@keyframes p6 {
+    100% {inset:0}
 }
 
 /* Transisi halaman */
@@ -62,10 +82,6 @@ body.loaded footer {
 }
 
 /* Animasi */
-@keyframes fadeIn {
-  0% { opacity: 0; transform: scale(0.9); }
-  100% { opacity: 1; transform: scale(1); }
-}
 
 @keyframes loadingBar {
   0% { width: 0; }

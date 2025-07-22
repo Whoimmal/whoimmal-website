@@ -1,3 +1,9 @@
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
 .calendar-section {
   padding: 60px 32px;
   background-color: #f9f4e8;
