@@ -43,6 +43,9 @@
 .calendar-container .day:hover {
   background-color: var(--color-accent);
   color: #fff;
+  transform: scale(.calendar-container .day.active {
+  background-color: var(--color-accent);
+  color: #fff;
   transform: scale(1.03);
 }
 
