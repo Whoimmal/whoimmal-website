@@ -249,3 +249,14 @@
 .add-btn:hover {
   background-color: var(--color-hover, #000);
 }
+
+.day.today {
+  background-color: #f0c66f !important;
+  border: none !important;
+  color: #111;
+}
+
+.day.today.has-event {
+  background-color: #f0c66f !important;
+  border: none !important;
+}
