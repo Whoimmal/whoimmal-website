@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const nextMonthBtn = document.getElementById("nextMonthBtn");
 
   const API_KEY = "AIzaSyDFFYzgKUR7cTnO1XOwsYMk0TijDHtl7zY";
-  const CAL_ID  = "your-calendar-id@group.calendar.google.com";
+  const CAL_ID  = "whoimmal@gmail.com";
   const TZ      = "Asia/Jakarta";
 
   let currentDate = new Date();
