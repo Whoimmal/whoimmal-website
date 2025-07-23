@@ -250,13 +250,23 @@
   background-color: var(--color-hover, #000);
 }
 
-.day.today {
-  background-color: #f0c66f !important;
-  border: none !important;
-  color: #111;
-}
-
+/* Prioritaskan jika elemen memiliki keduanya: today + has-event */
 .day.today.has-event {
   background-color: #f0c66f !important;
   border: none !important;
+  color: #111 !important;
+}
+
+/* Pastikan today tetap dominan meskipun tidak ada event */
+.day.today {
+  background-color: #f0c66f !important;
+  border: none !important;
+  color: #111 !important;
+}
+
+/* Ini untuk override default .has-event jika tanpa today */
+.day.has-event:not(.today) {
+  background-color: #eef3ff;
+  border: 1px solid #9cb6ff;
+  color: #333;
 }
