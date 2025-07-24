@@ -65,7 +65,7 @@
 
 .event-label {
   margin-top: 6px;
-  background-color: var(--color-accent, #f0c66f);
+  background-color: ;
   color: #111;
   font-size: 12px;
   padding: 4px 8px;
@@ -85,8 +85,8 @@
 .event-list li {
   padding: 2px 0;
   font-size: 13px;
-  border-left: 2px solid var(--color-text);
-  padding-left: 6px;
+  border-left: 2px solid var(--color-accent, #f0c66f);
+  padding-left: 2px;
 }
 
 .calendar-header {
