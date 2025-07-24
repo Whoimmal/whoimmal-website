@@ -1,43 +1,44 @@
 document.addEventListener("DOMContentLoaded", () => {
   const calendarContainer = document.getElementById("calendar");
+  const agendaList = document.getElementById("agendaList");
   const monthYearDisplay = document.getElementById("monthYearDisplay");
   const prevMonthBtn = document.getElementById("prevMonthBtn");
   const nextMonthBtn = document.getElementById("nextMonthBtn");
 
   const API_KEY = "AIzaSyDFFYzgKUR7cTnO1XOwsYMk0TijDHtl7zY";
-  const CAL_ID  = "whoimmal@gmail.com";
-  const TZ      = "Asia/Jakarta";
+  const CAL_ID = "whoimmal@gmail.com";
+  const TZ = "Asia/Jakarta";
 
   let currentDate = new Date();
+  const colorMap = new Map();
+
+  function getRandomColor() {
+    const colors = [
+      "#e74c3c", "#3498db", "#27ae60", "#f39c12", "#8e44ad", "#16a085",
+      "#d35400", "#c0392b", "#2980b9", "#2ecc71", "#f1c40f", "#9b59b6",
+      "#34495e", "#7f8c8d", "#1abc9c", "#ff6b6b", "#ffa07a", "#a29bfe"
+    ];
+    return colors[Math.floor(Math.random() * colors.length)];
+  }
 
   function getMonthBounds(date) {
-    const year  = date.getFullYear();
+    const year = date.getFullYear();
     const month = date.getMonth();
-    const start = new Date(Date.UTC(year, month, 1, 0, 0, 0));
-    const end   = new Date(Date.UTC(year, month + 1, 1, 0, 0, 0));
+    const start = new Date(Date.UTC(year, month, 1));
+    const end = new Date(Date.UTC(year, month + 1, 1));
     return { start, end };
   }
 
   async function fetchEventsForMonth(date) {
     const { start, end } = getMonthBounds(date);
-    const timeMin = start.toISOString();
-    const timeMax = end.toISOString();
-
-    const url = `https://www.googleapis.com/calendar/v3/calendars/${encodeURIComponent(CAL_ID)}/events` +
-      `?key=${API_KEY}` +
-      `&singleEvents=true` +
-      `&orderBy=startTime` +
-      `&timeMin=${encodeURIComponent(timeMin)}` +
-      `&timeMax=${encodeURIComponent(timeMax)}` +
-      `&timeZone=${encodeURIComponent(TZ)}`;
+    const url = `https://www.googleapis.com/calendar/v3/calendars/${encodeURIComponent(CAL_ID)}/events?key=${API_KEY}&singleEvents=true&orderBy=startTime&timeMin=${start.toISOString()}&timeMax=${end.toISOString()}&timeZone=${encodeURIComponent(TZ)}`;
 
     try {
       const res = await fetch(url);
-      if (!res.ok) throw new Error(`HTTP ${res.status}`);
       const data = await res.json();
       return normalizeEvents(data.items || []);
     } catch (err) {
-      console.error("Gagal mengambil event Google Calendar:", err);
+      console.error("Error fetching events:", err);
       return {};
     }
   }
@@ -45,114 +46,113 @@ document.addEventListener("DOMContentLoaded", () => {
   function normalizeEvents(items) {
     const map = {};
     items.forEach(ev => {
-      const startRaw = ev.start?.date || ev.start?.dateTime;
-      if (!startRaw) return;
-
-      let dateStr;
-      let timeDisp = "All Day";
-      if (ev.start.date) {
-        dateStr = ev.start.date;
-      } else {
-        const d = new Date(ev.start.dateTime);
-        dateStr = d.toISOString().slice(0,10);
-        timeDisp = d.toLocaleTimeString('id-ID', {
-          hour: '2-digit',
-          minute: '2-digit',
-          hour12: false
-        });
-      }
+      const startISO = ev.start?.dateTime || ev.start?.date;
+      if (!startISO) return;
+      const dateStr = startISO.slice(0, 10);
+      const title = ev.summary || "(No Title)";
+      const time = ev.start?.dateTime
+        ? new Date(ev.start.dateTime).toLocaleTimeString('id-ID', { hour: '2-digit', minute: '2-digit', hour12: false })
+        : "Sepanjang Hari";
 
       if (!map[dateStr]) map[dateStr] = [];
+
+      if (!colorMap.has(title)) {
+        colorMap.set(title, getRandomColor());
+      }
+
       map[dateStr].push({
-        title: ev.summary || "(No title)",
-        time:  timeDisp
+        title,
+        time,
+        color: colorMap.get(title)
       });
     });
     return map;
   }
 
   async function renderCalendar(date) {
-    const year  = date.getFullYear();
+    const year = date.getFullYear();
     const month = date.getMonth();
     const today = new Date();
 
-    const monthNames = [
-      "January","February","March","April","May","June",
-      "July","August","September","October","November","December"
-    ];
+    const monthNames = ["Januari","Februari","Maret","April","Mei","Juni","Juli","Agustus","September","Oktober","November","Desember"];
+    const dayNames = ["Min", "Sen", "Sel", "Rab", "Kam", "Jum", "Sab"];
+
     monthYearDisplay.textContent = `${monthNames[month]} ${year}`;
+    calendarContainer.innerHTML = "";
+    agendaList.innerHTML = "";
 
     const events = await fetchEventsForMonth(date);
-    const firstDayWeekIndex = new Date(year, month, 1).getDay();
-    const daysInMonth = new Date(year, month + 1, 0).getDate();
 
-    calendarContainer.innerHTML = "";
+    // Hari
+    dayNames.forEach(day => {
+      const div = document.createElement("div");
+      div.className = "day-label";
+      div.textContent = day;
+      calendarContainer.appendChild(div);
+    });
 
-    for (let i = 0; i < firstDayWeekIndex; i++) {
+    const firstDay = new Date(year, month, 1).getDay();
+    for (let i = 0; i < firstDay; i++) {
       const empty = document.createElement("div");
-      empty.classList.add("day", "empty");
+      empty.className = "day empty";
       calendarContainer.appendChild(empty);
     }
 
-    for (let day = 1; day <= daysInMonth; day++) {
-      const dateStr = `${year}-${String(month + 1).padStart(2,'0')}-${String(day).padStart(2,'0')}`;
-      const dayBox = document.createElement("div");
-      dayBox.classList.add("day");
-      dayBox.setAttribute("data-date", dateStr);
+    const daysInMonth = new Date(year, month + 1, 0).getDate();
+    for (let d = 1; d <= daysInMonth; d++) {
+      const dateStr = `${year}-${String(month + 1).padStart(2, '0')}-${String(d).padStart(2, '0')}`;
+      const dayDiv = document.createElement("div");
+      dayDiv.className = "day";
 
-      if (
-        year === today.getFullYear() &&
-        month === today.getMonth() &&
-        day === today.getDate()
-      ) {
-        dayBox.classList.add("today");
+      if (year === today.getFullYear() && month === today.getMonth() && d === today.getDate()) {
+        dayDiv.classList.add("today");
       }
 
-      const dayNumber = document.createElement("div");
-      dayNumber.classList.add("day-number");
-      dayNumber.textContent = day;
-      dayBox.appendChild(dayNumber);
+      const number = document.createElement("div");
+      number.className = "day-number";
+      number.textContent = d;
+      dayDiv.appendChild(number);
 
-      if (events[dateStr]?.length) {
-        dayBox.classList.add("has-event");
-        const eventList = document.createElement("ul");
-        eventList.classList.add("event-list");
-
-        events[dateStr].forEach(ev => {
-          const li = document.createElement("li");
-          li.innerHTML = `<strong>${ev.time}</strong> — ${ev.title}`;
-          eventList.appendChild(li);
+      // Dots
+      if (events[dateStr]) {
+        const usedColors = new Set();
+        events[dateStr].forEach(e => {
+          if (!usedColors.has(e.color)) {
+            const dot = document.createElement("span");
+            dot.className = "dot-color";
+            dot.style.backgroundColor = e.color;
+            dayDiv.appendChild(dot);
+            usedColors.add(e.color);
+          }
         });
-
-        dayBox.appendChild(eventList);
       }
 
-      // Fitur klik & tahan (hold) untuk tambah event
-      let holdTimer;
-
-      dayBox.addEventListener("mousedown", () => {
-        holdTimer = setTimeout(() => {
-          openAddToCalendar(dateStr);
-        }, 700);
-      });
-
-      dayBox.addEventListener("mouseup", () => clearTimeout(holdTimer));
-      dayBox.addEventListener("mouseleave", () => clearTimeout(holdTimer));
-
-      calendarContainer.appendChild(dayBox);
+      calendarContainer.appendChild(dayDiv);
     }
-  }
 
-  function openAddToCalendar(dateStr) {
-    const base = "https://calendar.google.com/calendar/u/0/r/eventedit";
-    const compactDate = dateStr.replace(/-/g, '');
-    const startTime = `${compactDate}T190000`;
-    const endTime   = `${compactDate}T200000`;
+    // === Agenda List ===
+    const sortedDates = Object.keys(events).sort();
+    sortedDates.forEach(dateStr => {
+      const dateObj = new Date(dateStr);
+      const hari = dayNames[dateObj.getDay()];
+      const tanggal = dateObj.getDate();
+      const bulan = monthNames[dateObj.getMonth()];
+      const tahun = dateObj.getFullYear();
 
-    const url = `${base}?dates=${startTime}/${endTime}` +
-                `&text=New+Event&details=&location=&ctz=${encodeURIComponent(TZ)}`;
+      const dateHeader = document.createElement("div");
+      dateHeader.textContent = `${hari}, ${tanggal} ${bulan} ${tahun}`;
+      dateHeader.style.marginTop = "1rem";
+      dateHeader.style.fontWeight = "bold";
+      dateHeader.style.color = "var(--accent)";
+      agendaList.appendChild(dateHeader);
 
-    window.open(url, '_blank');
+      events[dateStr].forEach(e => {
+        const li = document.createElement("li");
+        li.innerHTML = `<span class="agenda-dot" style="background:${e.color}"></span> ${e.time} — ${e.title}`;
+        li.style.borderLeft = `4px solid ${e.color}`;
+        agendaList.appendChild(li);
+      });
+    });
   }
 
   prevMonthBtn.addEventListener("click", () => {

@@ -99,23 +99,31 @@
   </div>
 </section>
 
+  </main>
 
-<section class="calendar-section">
-  <div class="container">
-    <h2 class="section-title">Calendar of Whoimmal</h2>
-
-    <div class="calendar-header">
-      <button id="prevMonthBtn"><i class="fas fa-chevron-left"></i></button>
-      <h3 id="monthYearDisplay"></h3>
-      <button id="nextMonthBtn"><i class="fas fa-chevron-right"></i></button>
+<!-- Kalender -->
+<section class="calendar-wrapper">
+  <h2 class="calendar-title">Whoimmal of Calendars</h2>
+  <div class="calendar-grid-container">
+    <div class="calendar-box">
+      <div class="calendar-header">
+        <div class="calendar-header-title" id="monthYearDisplay"></div>
+        <div class="calendar-header-controls">
+          <button id="prevMonthBtn">❮</button>
+          <button id="nextMonthBtn">❯</button>
+        </div>
+      </div>
+      <div id="calendar" class="calendar-grid"></div>
     </div>
-
-    <div id="calendar" class="calendar-container"></div>
+    <div class="agenda-box">
+      <h3>Agenda Bulan Ini</h3>
+      <ul id="agendaList" class="agenda-list"></ul>
+    </div>
   </div>
 </section>
 
-    </main>
-  </div>
+
+
 
 <!-- News -->
 <section class="news-section">
