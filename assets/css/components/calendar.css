@@ -86,8 +86,8 @@
 .event-list li {
   padding: 2px 0;
   font-size: 12px;
-  border-left: 2px solid var(--color-accent);
-  padding-left: 1px;
+  border-left: 1px solid var(--color-accent);
+  padding-left: 2px;
 }
 
 .calendar-header {
