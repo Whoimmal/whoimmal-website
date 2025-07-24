@@ -85,7 +85,7 @@
 .event-list li {
   padding: 2px 0;
   font-size: 13px;
-  border-left: 2px solid var(--color-text, #fff);
+  border-left: 2px solid var(--color-text);
   padding-left: 6px;
 }
 
